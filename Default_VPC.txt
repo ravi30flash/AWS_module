@@ -6,3 +6,5 @@
 -> create Route Table
 -> internet gateway need to be attached with VPC
 -> Add internet gateway in the route table and subnet association
+
+# now you can create and check if internet is working or not, don't forget to set, automatic ip assign to enable
