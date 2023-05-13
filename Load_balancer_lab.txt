@@ -22,3 +22,51 @@
     -> VPC : choose the required VPC
     -> select protocol version
     -> Health check protocol : path
+ 
+ ________________________________________
+| 13th May, 2023                        |
+|_______________________________________|
+
+# step 1 : create machine1
+    -> define name
+    -> choose amazon Linux machine
+    -> choose key pair to login
+    -> choose Default VPC
+    -> choose no preference(so that any default subnet can be selected)
+    -> choose enable on auto assign public ip
+    -> choose security group 
+    -> launch instance
+        -> connect to instance
+            -> sudo su -
+            -> yum update -y
+            -> yum install httpd
+            -> cd /var/www/html/
+            -> echo " this webpage is being hosted from machine1" > index.html 
+# step 2 : create machine2
+    -> define name
+    -> choose amazon Linux machine
+    -> choose key pair to login
+    -> choose Default VPC
+    -> choose no preference(so that any default subnet can be selected)
+    -> choose enable on auto assign public ip
+    -> choose security group 
+    -> launch instance
+        -> connect to instance
+            -> sudo su -
+            -> yum update -y
+            -> yum install httpd
+            -> cd /var/www/html/
+            -> echo " this webpage is being hosted from machine1" > index.html 
+
+# step 3 : create target group1
+    -> click on create target group 
+    -> target type: instance
+    -> target group name : Machine1-tg
+    -> protocol : 80
+    -> VPC : default
+    -> Protocol version : HTTP1
+    -> create target group
+        -> choose instance which you want to connect
+
+# step 4 : create target group2
+    -> 
