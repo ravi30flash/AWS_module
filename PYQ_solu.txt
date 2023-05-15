@@ -13,16 +13,14 @@ Q2:
 step 1: create EC2 instance(ubuntu)
 step 2: connect using ssh
 step 3: apt update && apt upgrade -y
-step 4: apt install apache2 -y
-step 5: apt install docker.io -y
-step 6: apt install systemctl -y
-step 7: create directory
-step 8: create docker file, and html page
-step 9: 
+step 4: apt install docker.io -y
+step 5: create directory
+step 6: create docker file, and html page
+step 7: 
 	FROM nginx
 	COPY ./index.html /usr/share/nignx/html/
 	
-step 10: docker build -t myapp:1.0 ./
-step 11: docker run --name c1 -d -p 80:80 myapp:1.0
-step 12: docker inspect c1 | grep ip address
-step 13: go to browser, paste container ip address	
+step 8: docker build -t myapp:1.0 ./
+step 9: docker run --name c1 -d -p 80:80 myapp:1.0
+step 10: docker inspect c1 | grep ip address
+step 11: go to browser, paste container ip address	
