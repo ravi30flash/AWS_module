@@ -1,17 +1,17 @@
-# step 1: create instances
+# step 1: create instances(ubuntu)
 # step 2: after creating login into the instance
     -> sudo su
-    -> yum update -y
-    -> yum install httpd
-    -> systemctl start httpd
+    -> apt update -y
+    -> apt install apache2
+    -> systemctl start apache2
     -> cd /var/www/html
     -> echo "This webpage is being hosted from Load Balancers machine1" > index.html
-# step 3: create another instance
+# step 3: create another instance(ubuntu)
 # step 4: after creating login into the instance
     -> sudo su
-    -> yum update -y
-    -> yum install httpd
-    -> systemctl start httpd
+    -> apt update -y
+    -> apt install apache2
+    -> systemctl start apache2
     -> cd /var/www/html
     -> echo "This webpage is being hosted from Load Balancers machine2" > index.html
 
@@ -20,7 +20,7 @@
     -> Target group name : LB-tg1
     -> select protocol : HTTP, Port : 80
     -> VPC : choose the required VPC
-    -> select protocol version
+    -> select protocol version : HTTP1
     -> Health check protocol : path
  
  ________________________________________
